@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tecnocell App Login</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+		<link rel="stylesheet" href="css/demo.css" />
+		<link rel="stylesheet" href="css/sky-forms.css" />
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" href="css/sky-forms-ie8.css">
+		<![endif]-->
+
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<script src="https://use.fontawesome.com/ef241c16b6.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+		<script src="js/funciones.js"></script>
+		<!--[if lt IE 10]>
+			<script src="js/jquery.placeholder.min.js"></script>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="js/sky-forms-ie8.js"></script>
+		<![endif]-->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+
+	<body class="bg-blue">
+		<div class="body body-s">
+			<form action="" id="sky-form" class="sky-form" />
+				<header>Ingreso a plataforma Tecnocell</header>
+
+				<fieldset>
+					<section>
+						<div class="row">
+							<label class="label col col-4">Usuario</label>
+							<div class="col col-8">
+								<label class="input">
+									<i class="icon-append fa-user"></i>
+									<input type="text" id="usuario" name="usuario" />
+								</label>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<div class="row">
+							<label class="label col col-4">Password</label>
+							<div class="col col-8">
+								<label class="input">
+									<i class="icon-append fa-key"></i>
+									<input type="password" id="password" name="password" onkeypress="return enter(event)"/>
+								</label>
+                <div id="mensajeRespuesta"></div>
+							</div>
+						</div>
+					</section>
+				</fieldset>
+				<footer>
+					<button type="button" onclick="login()" class="button">Log in</button>
+				</footer>
+			</form>
+		</div>
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/celu/a13.JPEG" class="d-block w-100" width="200" height="480" alt="Samsung A 13">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>A13 128GB 50MP NEGRO 128 GB 4GB RAM Octa-Core</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img/celu/A225g.JPEG" class="d-block w-100" width="200" height="480" alt="Samsung A22">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Samsung Galaxy A22 5G 128 GB 4 GB RAM 55MP.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img/celu/MOTOG22.JPEG" class="d-block w-100" width="200" height="480" alt="Moto G22">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Moto G22 128 GB cosmic black 4 GB RAM.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+		<script type="text/javascript">
+			$(function()
+			{
+				// Validation
+				$("#sky-form").validate(
+				{
+					// Rules for form validation
+					rules:
+					{
+						email:
+						{
+							required: true,
+							email: true
+						},
+						password:
+						{
+							required: true,
+							minlength: 3,
+							maxlength: 20
+						}
+					},
+
+					// Messages for form validation
+					messages:
+					{
+						email:
+						{
+							required: 'Please enter your email address',
+							email: 'Please enter a VALID email address'
+						},
+						password:
+						{
+							required: 'Please enter your password'
+						}
+					},
+
+					// Do not change code below
+					errorPlacement: function(error, element)
+					{
+						error.insertAfter(element.parent());
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
