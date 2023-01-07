@@ -1,4 +1,4 @@
-# Solucel
+# Tecnocell
 
 Es un sistema de servicio tecnico para una casa de celulares.
 
